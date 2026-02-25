@@ -48,9 +48,9 @@ class MainActivity : ComponentActivity() {
 }
 
 val starters = listOf(
-    Pokemon("Bulbassauro", R.drawable.bulbassaur),
+    Pokemon("Bulbassaur", R.drawable.bulbassaur),
     Pokemon("Charmander", R.drawable.charmander),
-    Pokemon(imageRes = R.drawable.squirtle, nome = "Squitle")
+    Pokemon(imageRes = R.drawable.squirtle, nome = "Squirtle")
 )
 
 @Composable
@@ -127,6 +127,7 @@ fun PokeOption(
             modifier = Modifier.size(40.dp),
             colorFilter = if (isSystemInDarkTheme() && !selected) ColorFilter.tint(Color.White) else null
         )
+        Text(pokemon.nome, fontSize = 20.sp, fontWeight = FontWeight.Bold)
 
     }
 
