@@ -97,6 +97,7 @@ fun PokemonStarterScreenPortrait(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
+        PokeLogo()
         PokemonHeader("Escolha seu Pokémon Inicial")
         Spacer(modifier = Modifier.weight(1f))
         PokeCard(pokemonSelected)
@@ -128,6 +129,8 @@ fun PokemonStarterScreenLandscape(
             modifier = Modifier.weight(1f),
             contentAlignment = Alignment.Center
         ) {
+            PokeLogo()
+            Spacer(modifier = modifier.height(32.dp))
             PokeCard(pokemon = pokemonSelected)
         }
         //Direita -> opcoes de pokemon
@@ -150,6 +153,16 @@ fun PokemonStarterScreenLandscape(
 
 }
 
+@Composable
+fun PokeLogo() {
+    Image(
+        painter = painterResource(id = R.drawable.logo_pokemon),
+        contentDescription = "Pokemon Logo",
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(100.dp)
+    )
+}
 
 
 @Composable
